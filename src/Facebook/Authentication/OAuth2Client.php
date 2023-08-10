@@ -23,13 +23,13 @@
  */
 namespace Facebook\Authentication;
 
-use Facebook\Facebook;
-use Facebook\FacebookApp;
-use Facebook\FacebookRequest;
-use Facebook\FacebookResponse;
-use Facebook\FacebookClient;
 use Facebook\Exceptions\FacebookResponseException;
 use Facebook\Exceptions\FacebookSDKException;
+use Facebook\Facebook;
+use Facebook\FacebookApp;
+use Facebook\FacebookClient;
+use Facebook\FacebookRequest;
+use Facebook\FacebookResponse;
 
 /**
  * Class OAuth2Client
@@ -143,7 +143,7 @@ class OAuth2Client
             'scope' => implode(',', $scope)
         ];
 
-        return static::BASE_AUTHORIZATION_URL . '/' . $this->graphVersion . '/dialog/oauth?' . http_build_query($params, null, $separator);
+        return static::BASE_AUTHORIZATION_URL . '/' . $this->graphVersion . '/dialog/oauth?' . http_build_query($params, '', $separator);
     }
 
     /**
